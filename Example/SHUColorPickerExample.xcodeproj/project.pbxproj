@@ -14,14 +14,12 @@
 		21B715B119054D9200AD7D3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B715B019054D9200AD7D3E /* main.m */; };
 		21B715B519054D9200AD7D3E /* SHUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B715B419054D9200AD7D3E /* SHUAppDelegate.m */; };
 		21B715B819054D9200AD7D3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B715B619054D9200AD7D3E /* Main.storyboard */; };
-		21B715BB19054D9200AD7D3E /* SHUColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B715BA19054D9200AD7D3E /* SHUColorPickerViewController.m */; };
 		21B715BD19054D9200AD7D3E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21B715BC19054D9200AD7D3E /* Images.xcassets */; };
 		21B715C419054D9200AD7D3E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B715C319054D9200AD7D3E /* XCTest.framework */; };
 		21B715C519054D9200AD7D3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B715A419054D9200AD7D3E /* Foundation.framework */; };
 		21B715C619054D9200AD7D3E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B715A819054D9200AD7D3E /* UIKit.framework */; };
 		21B715CE19054D9200AD7D3E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21B715CC19054D9200AD7D3E /* InfoPlist.strings */; };
 		21B715D019054D9200AD7D3E /* SHUColorPickerExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B715CF19054D9200AD7D3E /* SHUColorPickerExampleTests.m */; };
-		21B715DC190559D500AD7D3E /* colormap.png in Resources */ = {isa = PBXBuildFile; fileRef = 21B715DB190559D500AD7D3E /* colormap.png */; };
 		54253761AFC5417CBAF0B78D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77BB37EB8BBC446EA312DFA0 /* libPods.a */; };
 		FA61FEC77C7D4D5CBAC19049 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 77BB37EB8BBC446EA312DFA0 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -49,15 +47,12 @@
 		21B715B319054D9200AD7D3E /* SHUAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHUAppDelegate.h; sourceTree = "<group>"; };
 		21B715B419054D9200AD7D3E /* SHUAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHUAppDelegate.m; sourceTree = "<group>"; };
 		21B715B719054D9200AD7D3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		21B715B919054D9200AD7D3E /* SHUColorPickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SHUColorPickerViewController.h; sourceTree = "<group>"; };
-		21B715BA19054D9200AD7D3E /* SHUColorPickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHUColorPickerViewController.m; sourceTree = "<group>"; };
 		21B715BC19054D9200AD7D3E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		21B715C219054D9200AD7D3E /* SHUColorPickerExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SHUColorPickerExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B715C319054D9200AD7D3E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		21B715CB19054D9200AD7D3E /* SHUColorPickerExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SHUColorPickerExampleTests-Info.plist"; sourceTree = "<group>"; };
 		21B715CD19054D9200AD7D3E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		21B715CF19054D9200AD7D3E /* SHUColorPickerExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SHUColorPickerExampleTests.m; sourceTree = "<group>"; };
-		21B715DB190559D500AD7D3E /* colormap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = colormap.png; path = ../../Assets/colormap.png; sourceTree = "<group>"; };
 		77BB37EB8BBC446EA312DFA0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -125,10 +120,7 @@
 				21B715B319054D9200AD7D3E /* SHUAppDelegate.h */,
 				21B715B419054D9200AD7D3E /* SHUAppDelegate.m */,
 				21B715B619054D9200AD7D3E /* Main.storyboard */,
-				21B715B919054D9200AD7D3E /* SHUColorPickerViewController.h */,
-				21B715BA19054D9200AD7D3E /* SHUColorPickerViewController.m */,
-				21B715BC19054D9200AD7D3E /* Images.xcassets */,
-				21B715DA1905599200AD7D3E /* Images */,
+				21B715DD19055A7400AD7D3E /* Views */,
 				21B715AB19054D9200AD7D3E /* Supporting Files */,
 			);
 			path = SHUColorPickerExample;
@@ -137,6 +129,7 @@
 		21B715AB19054D9200AD7D3E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				21B715BC19054D9200AD7D3E /* Images.xcassets */,
 				21B715AC19054D9200AD7D3E /* SHUColorPickerExample-Info.plist */,
 				21B715AD19054D9200AD7D3E /* InfoPlist.strings */,
 				21B715B019054D9200AD7D3E /* main.m */,
@@ -163,12 +156,11 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		21B715DA1905599200AD7D3E /* Images */ = {
+		21B715DD19055A7400AD7D3E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				21B715DB190559D500AD7D3E /* colormap.png */,
 			);
-			name = Images;
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,7 +244,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21B715DC190559D500AD7D3E /* colormap.png in Resources */,
 				21B715BD19054D9200AD7D3E /* Images.xcassets in Resources */,
 				21B715AF19054D9200AD7D3E /* InfoPlist.strings in Resources */,
 				21B715B819054D9200AD7D3E /* Main.storyboard in Resources */,
@@ -339,7 +330,6 @@
 			files = (
 				21B715B119054D9200AD7D3E /* main.m in Sources */,
 				21B715B519054D9200AD7D3E /* SHUAppDelegate.m in Sources */,
-				21B715BB19054D9200AD7D3E /* SHUColorPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
