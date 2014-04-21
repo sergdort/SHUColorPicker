@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 ___FULLUSERNAME___. All rights reserved.
 //
 
-#import "SHUViewController.h"
+#import "SHUColorPickerViewController.h"
 
-@interface SHUViewController ()
+@interface SHUColorPickerViewController ()
 
 @end
 
-@implementation SHUViewController
+@implementation SHUColorPickerViewController
 
 - (void)viewDidLoad
 {

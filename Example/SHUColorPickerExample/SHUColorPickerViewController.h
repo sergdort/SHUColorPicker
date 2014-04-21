@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SHUViewController : UIViewController
+@interface SHUColorPickerViewController : UIViewController
 
 @end
