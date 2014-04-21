@@ -1,0 +1,14 @@
+PODS:
+  - SHUColorPicker (0.1.0)
+
+DEPENDENCIES:
+  - SHUColorPicker (from `../SHUColorPicker.podspec`)
+
+EXTERNAL SOURCES:
+  SHUColorPicker:
+    :path: ../SHUColorPicker.podspec
+
+SPEC CHECKSUMS:
+  SHUColorPicker: e176ce9531a790ba2c65538256eca244d54e9bab
+
+COCOAPODS: 0.32.1

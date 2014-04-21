@@ -1,7 +1,11 @@
-pod "SHUColorPicker", :path => "../"
+#!ruby
 
-target "Demo" do
-end
+platform :ios, '7.0'
 
-target "DemoTests" do
-end
+#Before push use:
+#pod "SHUColorPicker"
+
+#For local development use:
+pod "SHUColorPicker", :path => "../SHUColorPicker.podspec"
+
+link_with ['SHUColorPickerExample', 'SHUColorPickerExampleTests']
