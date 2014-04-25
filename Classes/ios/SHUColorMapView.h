@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SHUBrightnessPickerView.h"
 
-@interface SHUColorMapView : UIView
+@class SHUColorMapView;
+
+@protocol SHUColorMapViewDelegate <NSObject>
+
+- (void) colormapView:(SHUColorMapView *)colorMapView didChangeColor:(UIColor *)color;
+
+@end
+
+@interface SHUColorMapView : UIView  <SHUBrightnessPickerViewDataSource>
+
+@property (weak, nonatomic) id <SHUColorMapViewDelegate> delegate;
 
 @end

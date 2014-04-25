@@ -77,9 +77,10 @@
 }
 
 - (void) _handleTouchs:(NSSet *)touches{
-    for (UITouch *touch in touches) {
-        CGPoint currentTouchPosition = [touch locationInView:self];
-        [self _movePickerToPosition:currentTouchPosition];
+    CGPoint currentTouchPosition = [[touches anyObject] locationInView:self];
+    [self _movePickerToPosition:currentTouchPosition];
+    if ([self.delegate respondsToSelector:@selector(colormapView:didChangeColor:)]) {
+        [self.delegate colormapView:self didChangeColor:[self _getColorFromPosition:currentTouchPosition]];
     }
 }
 
@@ -112,5 +113,14 @@
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
     [self _handleTouchs:touches];
 }
+
+
+#pragma mark - SHUBrightnessPickerViewDataSource
+
+- (UIColor *) startColorForBrightnessPicker{
+    return [self _getColorFromPosition:self.pickerView.center];
+}
+
+
 
 @end

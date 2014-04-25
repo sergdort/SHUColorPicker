@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -19,19 +19,32 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IL4-PI-Mmx" customClass="SHUColorMapView">
                                 <rect key="frame" x="20" y="31" width="257" height="257"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u6j-PG-gFh" customClass="SHUBrightnessPickerView">
+                                <rect key="frame" x="299" y="31" width="63" height="257"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="63" id="1nk-z1-wPu"/>
+                                    <constraint firstAttribute="height" constant="257" id="W34-d4-0DD"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="IL4-PI-Mmx" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="11" id="FBv-Wm-DbV"/>
+                            <constraint firstItem="IL4-PI-Mmx" firstAttribute="top" secondItem="u6j-PG-gFh" secondAttribute="top" id="GPa-oH-nBR"/>
                             <constraint firstAttribute="trailing" secondItem="IL4-PI-Mmx" secondAttribute="trailing" constant="291" id="brY-wY-rAu"/>
                             <constraint firstItem="IL4-PI-Mmx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="c1N-VP-F5d"/>
+                            <constraint firstItem="IL4-PI-Mmx" firstAttribute="leading" secondItem="u6j-PG-gFh" secondAttribute="leading" constant="-279" id="m4K-Gn-58z"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="IL4-PI-Mmx" secondAttribute="bottom" constant="32" id="ngo-GY-yBn"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="brightnessPicker" destination="u6j-PG-gFh" id="2ze-gT-HyE"/>
                         <outlet property="colorMapView" destination="IL4-PI-Mmx" id="fDl-4Q-vEd"/>
                     </connections>
                 </viewController>

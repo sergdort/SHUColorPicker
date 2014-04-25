@@ -8,45 +8,35 @@
 
 #import "SHUColorPickerViewController.h"
 #import "SHUColorMapView.h"
+#import "SHUBrightnessPickerView.h"
 
-@interface SHUColorPickerViewController ()
+@interface SHUColorPickerViewController () <SHUColorMapViewDelegate>
 
-@property (weak, nonatomic) IBOutlet SHUColorMapView *colorMapView;
+@property (weak, nonatomic) IBOutlet SHUColorMapView         *colorMapView;
+@property (weak, nonatomic) IBOutlet SHUBrightnessPickerView *brightnessPicker;
 
 @end
 
 @implementation SHUColorPickerViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.colorMapView.delegate = self;
+    self.brightnessPicker.dataSource = self.colorMapView;
+    self.brightnessPicker.pickerType = SHUBrightnessPickerViewVertical;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark - SHUColorMapViewDelegate
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)colormapView:(SHUColorMapView *)colorMapView didChangeColor:(UIColor *)color{
+    
+    if ([self.delegate respondsToSelector:@selector(colorPickerController:didPickColor:)]) {
+        [self.delegate colorPickerController:self didPickColor:color];
+    }
+    
+    [self.brightnessPicker setNeedsDisplay];
 }
-*/
 
 @end
