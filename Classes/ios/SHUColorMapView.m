@@ -10,8 +10,10 @@
 
 @interface SHUColorMapView ()
 
-@property (weak, nonatomic) UIImageView *mapImageView;
-@property (weak, nonatomic) UIView      *pickerView;
+@property (weak, nonatomic)   UIImageView *mapImageView;
+@property (weak, nonatomic)   UIView      *pickerView;
+@property (assign, nonatomic) CGFloat     pickedHue;
+@property (assign, nonatomic) CGFloat     pickedSaturation;
 
 @end
 
@@ -79,8 +81,8 @@
 - (void) _handleTouchs:(NSSet *)touches{
     CGPoint currentTouchPosition = [[touches anyObject] locationInView:self];
     [self _movePickerToPosition:currentTouchPosition];
-    if ([self.delegate respondsToSelector:@selector(colormapView:didChangeColor:)]) {
-        [self.delegate colormapView:self didChangeColor:[self _getColorFromPosition:currentTouchPosition]];
+    if ([self.delegate respondsToSelector:@selector(colormapView:didChangeHue:saturation:)]) {
+        [self.delegate colormapView:self didChangeHue:self.pickedHue saturation:self.pickedSaturation];
     }
 }
 
@@ -93,11 +95,11 @@
 
 - (UIColor *) _getColorFromPosition:(CGPoint)position{
     
-    CGFloat hue = (position.x - self.mapImageView.frame.origin.x) / self.mapImageView.frame.size.width;
-    CGFloat saturation = 1.0 - (position.y - self.mapImageView.frame.origin.y) / self.mapImageView.frame.size.height;
+    self.pickedHue = (position.x - self.mapImageView.frame.origin.x) / self.mapImageView.frame.size.width;
+    self.pickedSaturation = 1.0 - (position.y - self.mapImageView.frame.origin.y) / self.mapImageView.frame.size.height;
     
-    UIColor *color = [UIColor colorWithHue:hue
-                                saturation:saturation
+    UIColor *color = [UIColor colorWithHue:self.pickedHue
+                                saturation:self.pickedSaturation
                                 brightness:1.f
                                      alpha:1.0];
     

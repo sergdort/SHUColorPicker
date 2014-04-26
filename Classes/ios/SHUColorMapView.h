@@ -13,7 +13,7 @@
 
 @protocol SHUColorMapViewDelegate <NSObject>
 
-- (void) colormapView:(SHUColorMapView *)colorMapView didChangeColor:(UIColor *)color;
+- (void) colormapView:(SHUColorMapView *)colorMapView didChangeHue:(CGFloat )hue saturation:(CGFloat )saturation;
 
 @end
 
