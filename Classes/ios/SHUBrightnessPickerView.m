@@ -13,6 +13,7 @@
 @property (strong, nonatomic) UIColor  *startColor;
 @property (assign, nonatomic) BOOL      didSetuped;
 @property (weak, nonatomic)   UISlider *slider;
+@property (assign, nonatomic) CGFloat  startHue, startSaturation;
 
 @end
 
@@ -20,8 +21,15 @@
 
 - (void)drawRect:(CGRect)rect{
     [super drawRect:rect];
+    CGFloat hue, saturation;
+    hue = saturation = 0;
+    [self.dataSource getStartHue:&hue saturetion:&saturation];
+    self.startHue = hue;
+    self.startSaturation = saturation;
+    self.startColor = [UIColor colorWithHue:hue
+                                 saturation:saturation
+                                 brightness:1.0 alpha:1.0];
     
-    self.startColor = [self.dataSource startColorForBrightnessPicker];
     if (self.startColor) {
         self.slider.thumbTintColor = [self _getColorFromSliderValuer:self.slider.value];
         [self _drawGradient];
@@ -31,6 +39,7 @@
         [self _createSliderView];
     }
 }
+
 
 #pragma mark - Private
 
@@ -100,10 +109,10 @@
     slider.minimumTrackTintColor = [UIColor clearColor];
     slider.maximumTrackTintColor = [UIColor clearColor];
     [slider setThumbImage:[UIImage imageNamed:@"colormap"] forState:UIControlStateNormal];
-    slider.thumbTintColor = self.startColor;
+    slider.thumbTintColor = [self _getColorFromSliderValuer:self.startBrightness];
     slider.minimumValue = 0.;
     slider.maximumValue = 1.0;
-    slider.value = 1.0;
+    slider.value = self.startBrightness;
 }
 
 - (UIColor *) _getColorFromSliderValuer:(CGFloat )valuer{
@@ -115,6 +124,7 @@
                       brightness:valuer alpha:1.f];
 }
 
+
 #pragma mark - Actions
 
 - (void) sliderMoved:(UISlider *)slider{
@@ -123,5 +133,6 @@
         [self.delegate brightnessPicker:self didChangeBrightness:slider.value];
     }
 }
+
 
 @end

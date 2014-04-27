@@ -18,6 +18,8 @@
 
 @interface SHUColorPickerViewController : UIViewController
 
-@property (weak, nonatomic) id <SHUColorPickerViewControllerDelegate> delegate;
+@property (weak, nonatomic)   id <SHUColorPickerViewControllerDelegate> delegate;
+
+@property (strong, nonatomic) UIColor                                   *startColor;
 
 @end

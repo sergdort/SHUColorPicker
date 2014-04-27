@@ -17,7 +17,7 @@ typedef NS_ENUM(NSInteger, SHUBrightnessPickerViewType) {
 
 @protocol SHUBrightnessPickerViewDataSource <NSObject>
 
-- (UIColor *) startColorForBrightnessPicker;
+- (void) getStartHue:(CGFloat*) startHue saturetion:(CGFloat *) saturation;
 
 @end
 
@@ -32,5 +32,6 @@ typedef NS_ENUM(NSInteger, SHUBrightnessPickerViewType) {
 @property (weak, nonatomic)   id <SHUBrightnessPickerViewDelegate>   delegate;
 @property (weak, nonatomic)   id <SHUBrightnessPickerViewDataSource> dataSource;
 @property (assign, nonatomic) SHUBrightnessPickerViewType            pickerType;
+@property (assign, nonatomic) CGFloat                                startBrightness;
 
 @end

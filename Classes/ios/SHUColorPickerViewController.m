@@ -23,18 +23,19 @@
 @implementation SHUColorPickerViewController
 
 - (void) viewDidLoad{
-    
     [super viewDidLoad];
     
-    self.currentBrightness = 1.0f;
     self.colorMapView.delegate = self;
+    [self.colorMapView setStartHue:self.currentHue saturation:self.currentSaturation];
+    
     self.brightnessPicker.dataSource = self.colorMapView;
     self.brightnessPicker.pickerType = SHUBrightnessPickerViewVertical;
+    self.brightnessPicker.delegate = self;
+    self.brightnessPicker.startBrightness = self.currentBrightness;
 }
 
-#pragma mark - SHUColorMapViewDelegate
-
-- (void) colormapView:(SHUColorMapView *)colorMapView didChangeHue:(CGFloat)hue saturation:(CGFloat)saturation{
+- (void) viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
     
     if ([self.delegate respondsToSelector:@selector(colorPickerController:didPickColor:)]) {
         UIColor *pickedColor = [UIColor colorWithHue:self.currentHue
@@ -42,7 +43,29 @@
                                           brightness:self.currentBrightness alpha:1.f];
         [self.delegate colorPickerController:self didPickColor:pickedColor];
     }
+}
+
+
+#pragma mark - Override accessors
+
+- (void) setStartColor:(UIColor *)startColor{
+    _startColor = startColor;
+    CGFloat startHue, startSaturation, startBrightness;
+    startHue = startSaturation = startBrightness = 0;
     
+    [_startColor getHue:&startHue saturation:&startSaturation brightness:&startBrightness alpha:NULL];
+    self.currentHue = startHue;
+    self.currentBrightness = startBrightness;
+    self.currentSaturation = startSaturation;
+}
+
+
+#pragma mark - SHUColorMapViewDelegate
+
+- (void) colormapView:(SHUColorMapView *)colorMapView didChangeHue:(CGFloat)hue saturation:(CGFloat)saturation{
+    
+    self.currentHue = hue;
+    self.currentSaturation = saturation;
     [self.brightnessPicker setNeedsDisplay];
 }
 

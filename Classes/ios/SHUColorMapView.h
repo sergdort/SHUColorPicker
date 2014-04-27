@@ -21,4 +21,6 @@
 
 @property (weak, nonatomic) id <SHUColorMapViewDelegate> delegate;
 
+- (void) setStartHue:(CGFloat) hue saturation:(CGFloat)saturation;
+
 @end

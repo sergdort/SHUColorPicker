@@ -43,6 +43,17 @@
     return self;
 }
 
+
+#pragma mark - Public
+
+- (void) setStartHue:(CGFloat)hue saturation:(CGFloat)saturation{
+    CGPoint center = CGPointMake(hue * self.mapImageView.frame.size.width,
+                                 (1.0f - saturation) * self.mapImageView.frame.size.height);
+    self.pickerView.center = center;
+    self.pickerView.backgroundColor = [self _getColorFromPosition:center];
+}
+
+
 #pragma mark - Pivate
 
 - (void) _createMapImageViewWithFrame:(CGRect)frame{
@@ -76,6 +87,9 @@
     
     [self addSubview:pickerView];
     self.pickerView = pickerView;
+    if ([self.delegate respondsToSelector:@selector(colormapView:didChangeHue:saturation:)]) {
+        [self.delegate colormapView:self didChangeHue:self.pickedHue saturation:self.pickedSaturation];
+    }
 }
 
 - (void) _handleTouchs:(NSSet *)touches{
@@ -106,6 +120,7 @@
     return color;
 }
 
+
 #pragma mark - Touch actions
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -119,8 +134,9 @@
 
 #pragma mark - SHUBrightnessPickerViewDataSource
 
-- (UIColor *) startColorForBrightnessPicker{
-    return [self _getColorFromPosition:self.pickerView.center];
+- (void ) getStartHue:(CGFloat *)startHue saturetion:(CGFloat *)saturation{
+    *startHue = self.pickedHue;
+    *saturation = self.pickedSaturation;
 }
 
 

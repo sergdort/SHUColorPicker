@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2142E75E190D089C00C38968 /* SHUConcreatColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2142E75D190D089C00C38968 /* SHUConcreatColorPickerViewController.m */; };
+		2142E761190D095600C38968 /* SHURootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2142E760190D095600C38968 /* SHURootViewController.m */; };
 		21B715A519054D9200AD7D3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B715A419054D9200AD7D3E /* Foundation.framework */; };
 		21B715A719054D9200AD7D3E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B715A619054D9200AD7D3E /* CoreGraphics.framework */; };
 		21B715A919054D9200AD7D3E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B715A819054D9200AD7D3E /* UIKit.framework */; };
@@ -36,6 +38,10 @@
 
 /* Begin PBXFileReference section */
 		11D504C85B844662A7869196 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		2142E75C190D089C00C38968 /* SHUConcreatColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHUConcreatColorPickerViewController.h; sourceTree = "<group>"; };
+		2142E75D190D089C00C38968 /* SHUConcreatColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHUConcreatColorPickerViewController.m; sourceTree = "<group>"; };
+		2142E75F190D095600C38968 /* SHURootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHURootViewController.h; sourceTree = "<group>"; };
+		2142E760190D095600C38968 /* SHURootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHURootViewController.m; sourceTree = "<group>"; };
 		21B715A119054D9200AD7D3E /* SHUColorPickerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SHUColorPickerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B715A419054D9200AD7D3E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		21B715A619054D9200AD7D3E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -119,6 +125,10 @@
 			children = (
 				21B715B319054D9200AD7D3E /* SHUAppDelegate.h */,
 				21B715B419054D9200AD7D3E /* SHUAppDelegate.m */,
+				2142E75F190D095600C38968 /* SHURootViewController.h */,
+				2142E760190D095600C38968 /* SHURootViewController.m */,
+				2142E75C190D089C00C38968 /* SHUConcreatColorPickerViewController.h */,
+				2142E75D190D089C00C38968 /* SHUConcreatColorPickerViewController.m */,
 				21B715B619054D9200AD7D3E /* Main.storyboard */,
 				21B715DD19055A7400AD7D3E /* Views */,
 				21B715AB19054D9200AD7D3E /* Supporting Files */,
@@ -329,7 +339,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				21B715B119054D9200AD7D3E /* main.m in Sources */,
+				2142E761190D095600C38968 /* SHURootViewController.m in Sources */,
 				21B715B519054D9200AD7D3E /* SHUAppDelegate.m in Sources */,
+				2142E75E190D089C00C38968 /* SHUConcreatColorPickerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
